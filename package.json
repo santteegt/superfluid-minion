@@ -1,0 +1,26 @@
+{
+  "name": "superfluid-minion",
+  "version": "1.0.0",
+  "description": "Superfluid Minion",
+  "main": "scripts/index.js",
+  "scripts": {
+    "build": "truffle compile --all",
+    "test": "truffle test",
+    "deploy": "npm run build && RELEASE_VERSION=v1 npx truffle --network ganache exec scripts/deploy.js",
+    "deploy:rinkeby": "npm run build && RELEASE_VERSION=v1 npx truffle --network rinkeby exec scripts/deploy.js"
+  },
+  "author": "Santiago Gonzalez",
+  "license": "MIT",
+  "devDependencies": {
+    "@decentral.ee/web3-helpers": "^0.3.6",
+    "@openzeppelin/contracts": "3.2.1-solc-0.7",
+    "@openzeppelin/test-helpers": "^0.5.7",
+    "@superfluid-finance/ethereum-contracts": "0.2.3",
+    "@superfluid-finance/js-sdk": "0.2.4",
+    "@truffle/contract": "^4.3.6",
+    "@truffle/hdwallet-provider": "^1.2.1",
+    "dotenv": "^8.2.0",
+    "truffle": "^5.1.65",
+    "truffle-plugin-verify": "^0.5.4"
+  }
+}
