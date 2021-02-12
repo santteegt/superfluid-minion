@@ -36,6 +36,8 @@ REACT_APP_RPC_URI=https://rinkeby.infura.io/v3/<INFURA_APIKEY>
 yarn start
 ```
 
+* In order to test the Superfluid Minion, you need to connect to Rinkeby, and summon a DAO with [fDAI](https://rinkeby.etherscan.io/address/0x15f0ca26781c3852f8166ed2ebce5d18265cceb7) (0x15F0Ca26781C3852f8166eD2ebce5D18265cceb7) as the DAO token
+
 ### Superfluid Minion
 
 * Smart contracts are already deployed on Rinkeby (see below). But, uou can use this repo if you want to deploy the smart contracts on another chain using `truffle migrate`
@@ -50,4 +52,4 @@ yarn start
 
 ## Licence
 
-[MIT](LICENCE)
+[MIT](LICENSE)
