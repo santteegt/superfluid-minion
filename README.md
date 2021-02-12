@@ -10,7 +10,7 @@ A hackathon project for ETHDenver 2021
 
 ### DAOHaus UI (Pokemol)
 
-* You need to clone and run the UI from this [repository](https://github.com/santteegt/pokemol-web/tree/ethdenver)
+* You need to clone and run a custom Pokemol UI from this [repository](https://github.com/santteegt/pokemol-web/tree/ethdenver)
 
 ```
 git clone https://github.com/santteegt/pokemol-web -b ethdenver
