@@ -1,6 +1,13 @@
 # superfluid-minion
 
-A hackathon project for ETHDenver 2021
+Enabling money streaming on DAOS using Superfluid. This A hackathon project for ETHDenver 2021
+
+## Tech Stack
+
+* Superfluid
+* DAOHaus Pokemol UI
+* Moloch DAO
+* Moloch Minion
 
 ## Demo
 
