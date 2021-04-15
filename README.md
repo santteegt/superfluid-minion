@@ -43,7 +43,7 @@ REACT_APP_RPC_URI=https://rinkeby.infura.io/v3/<INFURA_APIKEY>
 yarn start
 ```
 
-* In order to test the Superfluid Minion, you need to connect to Rinkeby, and summon a DAO with [fDAI](https://rinkeby.etherscan.io/address/0x15f0ca26781c3852f8166ed2ebce5d18265cceb7) (0x15F0Ca26781C3852f8166eD2ebce5D18265cceb7) as the DAO token
+* In order to test the Superfluid Minion, you need to connect to Rinkeby, and summon a DAO with [fDAI](https://rinkeby.etherscan.io/address/0x15f0ca26781c3852f8166ed2ebce5d18265cceb7)(0x15F0Ca26781C3852f8166eD2ebce5D18265cceb7) as the DAO token (optional)
 
 ### Superfluid Minion
 
@@ -53,9 +53,9 @@ yarn start
 
 ### Rinkeby
 
-* SuperApp: [0x4d313dfec90f96fF1aabcb2c2dd48406e7Acf9ce](https://rinkeby.etherscan.io/address/0x4d313dfec90f96fF1aabcb2c2dd48406e7Acf9ce) 
-* SuperfluidMinionFactory: [0xce14094520008c00EF4CD794Fea98653eAAaDAca](https://rinkeby.etherscan.io/address/0xce14094520008c00EF4CD794Fea98653eAAaDAca)
-* SuperfluidMinion: [0xab59BFC8Cac06974e3d953F92A7650a485Dd5A27](https://rinkeby.etherscan.io/address/0xab59BFC8Cac06974e3d953F92A7650a485Dd5A27)
+* SuperApp: [0xcf7ce0023C4dA08c6b8065BB52032bC7951f2D43](https://rinkeby.etherscan.io/address/0xcf7ce0023C4dA08c6b8065BB52032bC7951f2D43) 
+* SuperfluidMinionFactory: [0xc4fe30611474Aa737b5B1DBC81aB4Eb9E8959DE1](https://rinkeby.etherscan.io/address/0xc4fe30611474Aa737b5B1DBC81aB4Eb9E8959DE1)
+* SuperfluidMinion (Template): [0xf138e3e64dF1e3B01B684d583079E444b8B5A275](https://rinkeby.etherscan.io/address/0xf138e3e64dF1e3B01B684d583079E444b8B5A275)
 
 ## Licence
 
