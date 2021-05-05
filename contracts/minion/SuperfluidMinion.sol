@@ -46,8 +46,8 @@ contract SuperfluidMinion is ReentrancyGuard, ISuperfluidMinion {
 
     event ProposeStream(uint256 proposalId, address proposer);
     event ExecuteStream(uint256 proposalId, address executor);
-    event PulledFunds(address moloch, address token, uint256 amount);
-    event WithdrawBalance(address superToken, address underlyingToken, uint256 amount, bool downgraded);
+    event PulledFunds(address indexed token, uint256 amount);
+    event WithdrawBalance(address indexed superToken, address indexed underlyingToken, address indexed withdrawnBy, uint256 amount, bool downgraded);
     event ActionCanceled(uint256 proposalId);
     event StreamCanceled(uint256 proposalId, address canceledBy);
     
@@ -81,7 +81,7 @@ contract SuperfluidMinion is ReentrancyGuard, ISuperfluidMinion {
         uint256 remainingFunds = moloch.userTokenBalances(address(this), token);
         if (remainingFunds > 0) {
             moloch.withdrawBalance(token, remainingFunds); // withdraw funds from parent moloch
-            emit PulledFunds(address(moloch), token, remainingFunds);
+            emit PulledFunds(token, remainingFunds);
         }
     }
 
@@ -127,7 +127,7 @@ contract SuperfluidMinion is ReentrancyGuard, ISuperfluidMinion {
         } else {
             require(superToken.transfer(address(moloch), remainingBalance), "Superfluid minion: superToken transfer failed");
         }
-        emit WithdrawBalance(address(superToken), address(underlyingToken), remainingBalance, _downgrade);
+        emit WithdrawBalance(address(superToken), address(underlyingToken), msg.sender, remainingBalance, _downgrade);
     }
     
     /// @notice submit a DAO proposal
