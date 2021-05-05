@@ -18,50 +18,23 @@ import {
 } from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
 import { ERC20WithTokenInfo, TokenInfo } from "@superfluid-finance/ethereum-contracts/contracts/interfaces/tokens/ERC20WithTokenInfo.sol";
 
-import "./SuperfluidMinion.sol";
+import { Initializable } from "@openzeppelin/contracts/proxy/Initializable.sol";
 
-contract SuperApp is SuperAppBase {
-    
-    string private _version;
-    ISuperfluid private _host; // Superfluid host address
-    IConstantFlowAgreementV1 private _cfa; // Superfluid Constant Flow Agreement address
-    IResolver private _resolver; // Superfluid resolver
-    mapping (address => address) public superTokenRegistry;
+import "./App.sol";
+
+
+/// @title SuperApp
+/// @notice SuperApp to be used along with SuperfluidMinion
+/// @dev still under development
+contract SuperAppV1 is BaseApp, SuperAppBase {
 
     // ISuperfluid.Operation[] private batchCalls;
     
-    constructor(address _sfHost, address _sfCFA, address _sfResolver, string memory _sfVersion) {
-        _host = ISuperfluid(_sfHost);
-        _cfa =  IConstantFlowAgreementV1(_sfCFA);
-        _resolver = IResolver(_sfResolver);
-        _version = _sfVersion;
+    function initialize(address _sfHost, address _sfCFA, address _sfResolver, string memory _sfVersion) external initializer {
+        BaseApp.__BaseApp_init_unchained(_sfHost, _sfCFA, _sfResolver, _sfVersion);
         // NOTE: this may be incorrect
         uint256 configWord = SuperAppDefinitions.APP_LEVEL_FINAL;
         _host.registerApp(configWord);
-    }
-
-    function getSuperToken(ERC20WithTokenInfo _token) public view returns (address tokenAddress) {
-        string memory tokenId = string(abi.encodePacked('supertokens', '.', _version, '.', _token.symbol(), 'x'));
-        tokenAddress = _resolver.get(tokenId);
-        if (tokenAddress == address(0)) { // Look on the registry if there's a Supertoken already
-            tokenAddress = superTokenRegistry[address(_token)];
-        }
-    }
-
-    function superfluidConfig() external view returns (ISuperfluid, IResolver, IConstantFlowAgreementV1, string memory) {
-        return (_host, _resolver, _cfa, _version);
-    }
-    
-    function createSuperToken(ERC20WithTokenInfo _token) public returns (ISuperToken superToken) {
-        if (superTokenRegistry[address(_token)] != address(0)) {
-            superToken = ISuperToken(superTokenRegistry[address(_token)]);
-        } else {
-            ISuperTokenFactory factory = _host.getSuperTokenFactory();
-            string memory name = string(abi.encodePacked('Super ', _token.name()));
-            string memory symbol = string(abi.encodePacked(_token.symbol(), 'x'));
-            superToken = factory.createERC20Wrapper(_token, ISuperTokenFactory.Upgradability.FULL_UPGRADABE, name, symbol);
-            superTokenRegistry[address(_token)] = address(superToken);
-        }
     }
     
     // function startStream(SuperfluidMinion.Stream memory stream) external returns (bool success, bytes memory newCtx) {

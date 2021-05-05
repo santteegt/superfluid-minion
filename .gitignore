@@ -7,3 +7,7 @@ build
 *.env
 
 .vscode/
+
+.openzeppelin/unknown-*.json
+
+*.log

@@ -12,15 +12,20 @@
   "author": "Santiago Gonzalez",
   "license": "MIT",
   "devDependencies": {
-    "@decentral.ee/web3-helpers": "^0.3.6",
-    "@openzeppelin/contracts": "3.2.1-solc-0.7",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^2.1.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.0",
+    "@openzeppelin/contracts": "3.4.1",
+    "@openzeppelin/hardhat-upgrades": "^1.7.0",
     "@openzeppelin/test-helpers": "^0.5.7",
-    "@superfluid-finance/ethereum-contracts": "1.0.0-dev.b61a962.0",
-    "@superfluid-finance/js-sdk": "0.4.4-dev.b61a962.0",
-    "@truffle/contract": "^4.3.6",
-    "@truffle/hdwallet-provider": "^1.2.1",
+    "@superfluid-finance/ethereum-contracts": "ethereum-contracts@v1.0.0-rc.3",
+    "@superfluid-finance/js-sdk": "js-sdk@v0.4.3",
+    "chai": "^4.2.0",
     "dotenv": "^8.2.0",
-    "truffle": "^5.1.65",
-    "truffle-plugin-verify": "^0.5.4"
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.0.0",
+    "hardhat": "^2.2.1",
+    "hardhat-gas-reporter": "^1.0.4",
+    "mocha": "^8.3.2"
   }
 }
