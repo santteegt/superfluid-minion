@@ -1,2 +1,17 @@
 {
+    "rinkeby": {
+        "App": "0x7d8151FAB5D6742F1c574fff472B6794062C2D0C",
+        "SuperfluidMinionTemplate": "0x16edD7562b74DF84A2892F7D4b56aA88f9b04A2d",
+        "SuperfluidMinionFactory": "0x4b168c1a1E729F4c8e3ae81d09F02d350fc905ca"
+    },
+    "xdai": {
+        "App": "0x9fc9420F277b7C25E17B67008b35CCB01c5c9B63",
+        "SuperfluidMinionTemplate": "0xb32111103e228A518568f98AE081863fe5f44048",
+        "SuperfluidMinionFactory": "0xfC86DfDd3b2e560729c78b51dF200384cfe87438"
+    },
+    "matic": {
+        "App": "0xdb4D89F2199b9Cf451B7Ff4bdC94b1c96De4bdD0",
+        "SuperfluidMinionTemplate": "0x00768B047f73D88b6e9c14bcA97221d6E179d468",
+        "SuperfluidMinionFactory": "0x52acf023d38A31f7e7bC92cCe5E68d36cC9752d6"
+    }
 }

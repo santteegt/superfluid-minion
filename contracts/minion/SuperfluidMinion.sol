@@ -90,9 +90,9 @@ contract SuperfluidMinion is ReentrancyGuard, ISuperfluidMinion {
     /// @param _token the underlying token
     /// @param value deposit value
     function upgradeToken(ERC20WithTokenInfo _token, uint256 value) external override memberOnly nonReentrant {
-        require(_token.balanceOf(address(this)) > 0, "SuperfluidMinion: No funds available to upgrade");
+        _pullFunds(address(_token));
+        require(_token.balanceOf(address(this)) >= value, "SuperfluidMinion: No enough funds available to upgrade");
 
-        // address superToken = sfApp.isSuperToken(_token) ? address(_token) : sfApp.getSuperToken(_token);
         address superToken = sfApp.getSuperToken(_token);
         require(superToken != address(0), "SuperfluidMinion: this token does not have superpowers");
 

@@ -11,3 +11,6 @@ build
 .openzeppelin/unknown-*.json
 
 *.log
+cache/
+build-info
+*.dbg.json

@@ -51,7 +51,7 @@ module.exports = {
     },
     xdai: {
       chainId: 0x64,
-      url: 'https://rpc.xdaichain.com/',
+      url: 'https://xdai.poanetwork.dev',
       gas: 8e6,
       gasPrice: 1e9,
       accounts: process.env.MNEMONIC ? {
@@ -59,7 +59,7 @@ module.exports = {
       } : [process.env.ACCOUNT_PK],
     },
     matic: {
-      chainId: 137,
+      chainId: 0x89,
       url: 'https://rpc-mainnet.maticvigil.com/',
       gas: 8e6,
       gasPrice: 1e9,
